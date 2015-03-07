@@ -1,9 +1,9 @@
 // Local Vars ===================================
 	var config 	= require('../config/');
 	var dbOpts = {
-		"url": "mongodb://localhost:27017/thisplay",
+		"url": config.env.mongo,
 		"settings": {
-				"db": {
+			"db": {
 				"native_parser": false
 			}
 		}

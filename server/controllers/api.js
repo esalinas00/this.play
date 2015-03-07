@@ -28,8 +28,21 @@
 			},
 			edit: {
 				handler: function(request, reply) {
-					var id = request.params.id ? encodeURIComponent(request.params.id) : 0;
-					reply('API Display Edit/Add '+ id);
+					const id = request.params.id ? encodeURIComponent(request.params.id) : 0;
+					const db = request.server.plugins['hapi-mongodb'].db;
+					var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
+
+					if (id !== 0) {
+						db.collection('displays').findOne({  "_id" : new ObjectID(id) }, function(err, result) {
+							if (err) return reply(Boom.internal('Internal MongoDB error', err));
+							reply(result);
+						});
+					} else {
+						db.collection('displays').find({}).toArray(function(err, docs) {
+							if (err) return reply(Boom.internal('Internal MongoDB error', err));
+							reply(docs);
+						});
+					}
 				}
 			},
 			delete: {
