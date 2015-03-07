@@ -16,7 +16,7 @@
 			app_name: "",
 			env: env[window.ENV || 'development'],
 			tpl: function (view) {
-				return '/'+this.env.name+'/views/'+view+'.html';
+				return '/views/'+view+'.html';
 			}
 		};
 })();

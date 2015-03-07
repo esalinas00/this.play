@@ -6,12 +6,15 @@
 // Common Dependencies ==========================
 	require('angular');
 	require('angular-ui-router');
-	require('./controllers/_index.js');
+	require('angular-touch');
 
 // Create and Bootstrap Angular App =============
 	angular.element(document).ready(function(){
-		var requires = ['ui.router'];
+		var requires = ['ui.router','ngTouch'];
 		window.app = angular.module('app', requires);
+
+		require('./controllers/_index.js');
+		require('./services/_index.js');
 
 		angular.module('app').constant('Config', require('./config'));
 

@@ -1,12 +1,12 @@
 (function () {
-    'use strict';
+	'use strict';
 
 	var controllersModule = require('./_index');
 
 	/**
 	 * @ngInject
 	 */
-	var form_ctrl = function ($scope) {
+	var login_ctrl = function ($scope) {
 		// Form Data
 		$scope.formData = {};
 
@@ -14,6 +14,7 @@
 			console.log('success!');
 		};
 	};
-	controllersModule.controller('loginCtrl', form_ctrl);
+	// controllersModule.controller('loginCtrl', login_ctrl);
+	module.exports = login_ctrl;
 
 })();

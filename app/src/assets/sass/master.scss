@@ -34,6 +34,10 @@
 @import "includes/menu";
 @import "includes/custom";
 
+// Views
+@import "views/login";
+@import "views/display";
+
 // Utility classes
 @import "includes/utilities"; 	// Has to be last to override when necessary
 @import "includes/responsive";	// Responsive Styles go here

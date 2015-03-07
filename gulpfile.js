@@ -119,5 +119,5 @@
 	});
 
 // Main Tasks ===================================
-	gulp.task('default', ['dev','watch']);
-	gulp.task('dev', ['views', 'sass', 'lint', 'browserify', 'livereload', 'webserver']);
+	gulp.task('default', ['dev', 'webserver']);
+	gulp.task('dev', ['views', 'sass', 'lint', 'browserify', 'livereload', 'watch']);

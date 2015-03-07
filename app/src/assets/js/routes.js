@@ -7,19 +7,19 @@
 			.state('login',{
 				url: '/login',
 				templateUrl: Config.tpl('login'),
-				controller: 'loginCtrl'
+				controller: require('./controllers/login_ctrl.js')
 			})
 			.state('app',{
 				url: '/app',
 				templateUrl: Config.tpl('app')
 				// ,
 				// controller: require('./controllers/form_ctrl.js')
+			})
+			.state('display',{
+				url: '/display',
+				templateUrl: Config.tpl('display'),
+				controller: require('./controllers/display_ctrl.js')
 			});
-			// Step 1
-				// .state('app.login', {
-				// 	url: '/booking',
-				// 	templateUrl: Config.tpl('app-login')
-				// });
 
 		$urlRouterProvider.otherwise('/login');
 		// $locationProvider.html5Mode(true);

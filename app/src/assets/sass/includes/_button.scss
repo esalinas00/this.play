@@ -69,7 +69,7 @@
 // Alternate buttons
 // --------------------------------------------------
 	.btn-default {
-		@include button-variant(color("blue","lighten-1"), color("white","base"));
+		@include button-variant(color("blue","base"), color("white","base"));
 	}
 	.btn-black {
 		@include button-variant(color("gray","darkest"));
@@ -96,7 +96,7 @@
 	.btn-submit {
 		color: white;
 		border: none;
-		@include v-gradient(color('brown','light'),#b79c7a);
+		@include v-gradient(color('brown','base'),#b79c7a);
 		@include transition(all 0.3s ease-in-out);
 
 		&:active, &:hover {color: white;background: #b79c7a;}
