@@ -40,12 +40,9 @@
 (function () {
 	'use strict';
 
-	var display_ctrl = function ($scope, socket) {
-		var $socket = socket;
+	var display_ctrl = function ($scope, $stateParams, socket) {
 		$scope.display_style = {};
-		socket.on('welcome', function (data) {
-			next_img(data.img_url);
-		});
+		$scope._id = socket.room_id = $stateParams.display_id;
 
 		$scope.le_click = function($event) {
 			socket.emit('client:click', { "event": $event });
@@ -59,12 +56,19 @@
 		};
 
 		// Incoming socket messages
-		socket.on('server:next', function (data) {
-			next_img(data.img_url);
-		});
-		socket.on('server:prev', function (data) {
-			next_img(data.img_url);
-		});
+			socket.on('welcome', function (data) {
+				next_img(data.img_url);
+			});
+			socket.on('server:next', function (data) {
+				next_img(data.img_url);
+			});
+			socket.on('server:prev', function (data) {
+				next_img(data.img_url);
+			});
+
+		// Outgoing socket messages
+			socket.emit('new_user', { room_id: socket.room_id }, function() {});
+
 
 		var next_img = function (img_url) {
 			$scope.display_style = { "background-image": "url("+img_url+")" };
@@ -125,7 +129,7 @@
 		angular.bootstrap(document, ['app']);
 	});
 })();
-}).call(this,require("DF1urx"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_c6710fab.js","/")
+}).call(this,require("DF1urx"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_b40e95e.js","/")
 },{"./config":1,"./controllers/_index.js":2,"./on_run":6,"./routes":7,"./services/_index.js":8,"DF1urx":17,"angular":13,"angular-touch":11,"angular-ui-router":12,"buffer":14}],6:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 (function() {
@@ -169,7 +173,7 @@
 				// controller: require('./controllers/form_ctrl.js')
 			})
 			.state('display',{
-				url: '/display',
+				url: '/display/:display_id?',
 				templateUrl: Config.tpl('display'),
 				controller: require('./controllers/display_ctrl.js')
 			});

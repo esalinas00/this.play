@@ -16,7 +16,7 @@
 				// controller: require('./controllers/form_ctrl.js')
 			})
 			.state('display',{
-				url: '/display',
+				url: '/display/:display_id?',
 				templateUrl: Config.tpl('display'),
 				controller: require('./controllers/display_ctrl.js')
 			});

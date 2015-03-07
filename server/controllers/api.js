@@ -23,11 +23,6 @@
 		display: {
 			index: {
 				handler: function(request, reply) {
-					reply('API Display Info');
-				}
-			},
-			edit: {
-				handler: function(request, reply) {
 					const id = request.params.id ? encodeURIComponent(request.params.id) : 0;
 					const db = request.server.plugins['hapi-mongodb'].db;
 					var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
@@ -43,6 +38,14 @@
 							reply(docs);
 						});
 					}
+				}
+			},
+			edit: {
+				handler: function(request, reply) {
+					const id = request.params.id ? encodeURIComponent(request.params.id) : 0;
+					const db = request.server.plugins['hapi-mongodb'].db;
+					var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
+					reply("test");
 				}
 			},
 			delete: {

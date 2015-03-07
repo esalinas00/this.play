@@ -17,7 +17,10 @@
 		io.sockets.on('connection', function (socket) {
 			console.log('new conn');
 			conns++;
-			io.sockets.emit('welcome', {img_url: get_img().img_url, conns: conns});
+			socket.on('new_user', function(data) {
+				console.log(data);
+				io.sockets.emit('welcome', {img_url: get_img().img_url, conns: conns});
+			});
 
 			socket.on('disconnect', function (event) {
 				console.log('disconn');
