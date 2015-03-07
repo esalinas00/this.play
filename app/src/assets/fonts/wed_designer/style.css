@@ -1,0 +1,225 @@
+@font-face {
+	font-family: 'wed_designer';
+	src:url('fonts/wed_designer.eot?kqwnnn');
+	src:url('fonts/wed_designer.eot?#iefixkqwnnn') format('embedded-opentype'),
+		url('fonts/wed_designer.woff?kqwnnn') format('woff'),
+		url('fonts/wed_designer.ttf?kqwnnn') format('truetype'),
+		url('fonts/wed_designer.svg?kqwnnn#wed_designer') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'wed_designer';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow:before {
+	content: "\e617";
+}
+
+.icon-bullet:before {
+	content: "\e618";
+}
+
+.icon-check:before {
+	content: "\e619";
+}
+
+.icon-check2:before {
+	content: "\e61a";
+}
+
+.icon-divider:before {
+	content: "\e61b";
+}
+
+.icon-extras-lovenest:before {
+	content: "\e61c";
+}
+
+.icon-foundation:before {
+	content: "\e61d";
+}
+
+.icon-grid:before {
+	content: "\e61e";
+}
+
+.icon-list:before {
+	content: "\e61f";
+}
+
+.icon-lovenest:before {
+	content: "\e620";
+}
+
+.icon-redlane:before {
+	content: "\e621";
+}
+
+.icon-rss:before {
+	content: "\e622";
+}
+
+.icon-sandals-select:before {
+	content: "\e623";
+}
+
+.icon-snapshots:before {
+	content: "\e624";
+}
+
+.icon-square-check:before {
+	content: "\e625";
+}
+
+.icon-video:before {
+	content: "\e626";
+}
+
+.icon-arrow-down:before {
+	content: "\e600";
+}
+
+.icon-arrow-left:before {
+	content: "\e601";
+}
+
+.icon-arrow-right:before {
+	content: "\e602";
+}
+
+.icon-arrow-up:before {
+	content: "\e603";
+}
+
+.icon-beaches:before {
+	content: "\e604";
+}
+
+.icon-cal:before {
+	content: "\e605";
+}
+
+.icon-camera:before {
+	content: "\e606";
+}
+
+.icon-fowlcay:before {
+	content: "\e607";
+}
+
+.icon-grandpineapple:before {
+	content: "\e608";
+}
+
+.icon-islandroutes:before {
+	content: "\e609";
+}
+
+.icon-privatevillas:before {
+	content: "\e60a";
+}
+
+.icon-sandals:before {
+	content: "\e60b";
+}
+
+.icon-select:before {
+	content: "\e60c";
+}
+
+.icon-tri-down:before {
+	content: "\e60d";
+}
+
+.icon-tri-left:before {
+	content: "\e60e";
+}
+
+.icon-tri-right:before {
+	content: "\e60f";
+}
+
+.icon-tri-up:before {
+	content: "\e610";
+}
+
+.icon-weddingmoons:before {
+	content: "\e611";
+}
+
+.icon-circle-tick:before {
+	content: "\e612";
+}
+
+.icon-bullet-tick:before {
+	content: "\e613";
+}
+
+.icon-close:before {
+	content: "\e616";
+}
+
+.icon-edit:before {
+	content: "\e614";
+}
+
+.icon-lock:before {
+	content: "\f023";
+}
+
+.icon-print:before {
+	content: "\f02f";
+}
+
+.icon-plus:before {
+	content: "\f067";
+}
+
+.icon-minus:before {
+	content: "\f068";
+}
+
+.icon-thumbs-o-up:before {
+	content: "\f087";
+}
+
+.icon-twitter:before {
+	content: "\f099";
+}
+
+.icon-facebook:before {
+	content: "\f09a";
+}
+
+.icon-google-plus:before {
+	content: "\f0d5";
+}
+
+.icon-pinterest:before {
+	content: "\e615";
+}
+
+.icon-user:before {
+	content: "\e971";
+}
+
+.icon-spinner:before {
+	content: "\e97a";
+}
+
+.icon-pencil:before {
+	content: "\e905";
+}
+

@@ -1,0 +1,87 @@
+//
+// Menu
+// --------------------------------------------------
+
+header {
+	@include box-shadow(0px 2px 6px 2px rgba(0,0,0,0.35));
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 100%;
+	height: 58px;
+	margin-bottom: 40px;
+	background-color: #383838;
+	p {
+		margin: 24px 0 0 0;
+		font-size: 20px;
+		line-height: 20px;
+		span {text-transform: uppercase;font-size: 13px;}
+	}
+	.logo {
+		@include box-shadow(0px 2px 6px 2px rgba(0,0,0,0.15));
+		position: relative;
+		padding-top: 12px;
+		display: block;
+		cursor: pointer;
+		i {
+			@extend .icon;
+			width: 100%;
+			display: block;
+			text-align: center;
+		}
+	}
+	.container { position: relative }
+	.slogan {
+		@include transition(all 0.3s);
+		position: absolute;
+		right: 50%;
+		visibility: hidden;
+		opacity: 0;
+	}
+	&.sandals {
+		background-image: -moz-radial-gradient(60% bottom, circle cover, #5a5a5a, #383838 40%);
+		background-image: -webkit-radial-gradient(60% bottom, circle cover, #5a5a5a, #383838 40%);
+		background-image: -o-radial-gradient(60% bottom, circle cover, #5a5a5a, #383838 40%);
+		background-image: -ms-radial-gradient(60% bottom, circle cover, #5a5a5a, #383838 40%);
+		background-image: radial-gradient(60% bottom, circle cover, #5a5a5a, #383838 40%);
+		* { @include transition(all 0.3s); }
+		p, a, a:active, a:hover { color: #d6d6d6; }
+		.logo { background-image: url('#{$img-path}/sandals/san-bl-logo-compressor.jpg'); }
+		.logo {
+			width: 153px;
+			height: 82px;
+			background-color: color("gray","darkest");
+			background-image: -moz-radial-gradient(center bottom, ellipse cover,  #5a5a5a -20%, color("gray","darkest") 75%);
+			background-image: -webkit-gradient(radial, center bottom, -20%, center center, 75%, color-stop(0%,#5a5a5a), color-stop(75%,color("gray","darkest")));
+			background-image: -webkit-radial-gradient(center bottom, ellipse cover,  #5a5a5a -20%,color("gray","darkest") 75%);
+			background-image: -o-radial-gradient(center bottom, ellipse cover,  #5a5a5a -20%,color("gray","darkest") 75%);
+			background-image: -ms-radial-gradient(center bottom, ellipse cover,  #5a5a5a -20%,color("gray","darkest") 75%);
+			background-image: radial-gradient(ellipse at center bottom, #5a5a5a -20%, #1f1f1f 75%);
+			i {
+				@extend .icon-sandals;
+				font-size: 60px;
+				background: -webkit-linear-gradient(#fff, #c5c5c5);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+	}
+	&.beaches {
+		* { @include transition(all 0.3s); }
+		.logo {
+			width: 188px;
+			height: 88px;
+			i {
+				@extend .icon-beaches;
+			}
+		}
+	}
+
+	@media (min-width: $screen-md) {
+		.slogan {
+			right: 0;
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}

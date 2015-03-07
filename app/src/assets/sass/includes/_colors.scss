@@ -1,0 +1,156 @@
+//
+// Colors
+// --------------------------------------------------
+
+	$brown: (
+		"light": #CEAD83, // link
+		"base": #797266,
+		"mid-tone": #56534e,
+		"darker": #453C2D,
+		"dark": #635544, // footer
+		"headers": #887d6a,
+		"head-underline": #d9c2a7 //headers underline
+	);
+
+	$gray: (
+		"lighter": #d8d8d8, // header text
+		"light": #cfcfcf, // placeholder
+		"base": #8f8f8f,
+		"dark": #7b7b7b,
+		"darker": #666,
+		"darkest": #383838,
+		"tabs": #828282,
+		"body": #f2f2f2,
+		"footer": #dbdbdb,
+		"divider": #e8e8e8, //divider
+		"thead": #e0e0e0, //Wedding Review table head
+		"trow": #f5f5f5, //Wedding Review table row alt
+		"tdiv": #c9c9c9, //Wedding Review cell divider
+		"lbtitle": #979797,
+		"lbcontent": #666666
+	);
+
+	$orange: (
+		"base": #ed5431,
+		"darker": #d83813
+	);
+
+	$blue: (
+		"lighten-5":  #E3F2FD,
+		"lighten-4":  #BBDEFB,
+		"lighten-3":  #90CAF9,
+		"lighten-2":  #64B5F6,
+		"lighten-1":  #42A5F5,
+		"base":       #2196F3,
+		"darken-1":   #1E88E5,
+		"darken-2":   #1976D2,
+		"darken-3":   #1565C0,
+		"darken-4":   #0D47A1,
+		"accent-1":    #82B1FF,
+		"accent-2":    #448AFF,
+		"accent-3":    #2979FF,
+		"accent-4":    #2962FF
+	);
+
+	$black: (
+		"base": #000,
+		"devil": #666,
+		"darker": #373737
+	);
+
+	$pink: (
+	    "base": #ef7381
+	);
+
+	$green: (
+		"base": #809a00
+	);
+
+	$red: (
+		"lighten-5":  #FFEBEE,
+		"lighten-4":  #FFCDD2,
+		"lighten-3":  #EF9A9A,
+		"lighten-2":  #E57373,
+		"lighten-1":  #EF5350,
+		"base":       #F44336,
+		"darken-1":   #E53935,
+		"darken-2":   #D32F2F,
+		"darken-3":   #C62828,
+		"darken-4":   #B71C1C,
+		"accent-1":    #FF8A80,
+		"accent-2":    #FF5252,
+		"accent-3":    #FF1744,
+		"accent-4":    #D50000
+	);
+
+	$white: (
+		"base": #fff
+	);
+
+	$colors: (
+		"brown": $brown,
+		"gray": $gray,
+		"green": $green,
+		"red": $red,
+		"white": $white,
+		"blue": $blue,
+		"black": $black,
+		"pink": $pink,
+		"orange": $orange
+	);
+
+// Backgrounds
+//----------------------
+
+	/*
+		// Font
+		// =================
+			Helvetica 67
+			Helvetica 57
+			Helvetica 35
+			Helvetica 25
+			Trajan
+
+			12px body text
+			10px disclaimers
+
+		// Buttons
+		// =================
+			142px
+			180px
+			163px 38p
+			202px 15p
+			232px // tabs
+	*/
+
+@function color($color, $type) {
+	@if map-has-key($colors, $color) {
+		$curr_color: map-get($colors, $color);
+		@if map-has-key($curr_color, $type) {
+			@return map-get($curr_color, $type);
+		}
+	}
+	@warn "Unknown `#{name}` in $colors.";
+	@return null;
+}
+
+@each $color_name, $color in $colors {
+	@each $color_type, $color_value in $color {
+		@if $color_type == "base" {
+			.#{$color_name} {
+				background-color: $color_value !important;
+			}
+			.#{$color_name}-text {
+				color: $color_value !important;
+			}
+		}
+		@else {
+			.#{$color_name}.#{$color_type} {
+				background-color: $color_value !important;
+			}
+			.#{$color_name}-text.text-#{$color_type} {
+				color: $color_value !important;
+			}
+		}
+	}
+}

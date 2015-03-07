@@ -1,0 +1,124 @@
+//
+// Custom Stylings
+// --------------------------------------------------
+
+// Main
+// =====================
+	main { margin: 0 1rem; }
+
+// Steps
+// =====================
+	.card {
+		@include box-shadow(0 1px 2px color("gray","light"));
+		background: white;
+		margin: 0 0 1rem;
+		border-radius: 6px;
+	}
+	#steps-buttons {
+		padding: 30px 0 25px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		a {
+			text-align: center;
+			flex-grow: 1;
+			i {
+				@include transition(all 0.3s);
+				$size: 36px;
+				width: $size;
+				height: $size;
+				margin: auto;
+				display: block;
+				justify-content: center;
+				flex-basis: 1;
+				text-align: center;
+				text-shadow: 1px 1px rgba(0,0,0,0.5);
+				font: 18px $font-helv67;
+				line-height: $size;
+				color: white;
+				background: color("gray","dark");
+				border-radius: 50%;
+			}
+			&.active i {
+				@include animation(step-active .5s ease both);
+				background: color("green","base");
+			}
+			&.error i {
+				background: color("red","lighten-1");
+			}
+		}
+		b {
+			display: none;
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+	@include keyframes(step-active) {
+		0% { @include scale(1); }
+		50% { @include scale(2); }
+		100% { @include scale(1); }
+	}
+
+// Form
+// =====================
+	fieldset.row { margin-bottom: 1rem }
+	#le_form {
+		position: relative;
+		.card {
+			padding: 30px
+		}
+		.single {
+			width: 70%;
+			display: block;
+			margin: 40px auto 0;
+		}
+	}
+	#form-views {
+		@include transition(0.5s all ease);
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	#form-views.ng-enter {
+		@include animation(ly-in-from-left 0.5s both ease);
+	}
+	#form-views.ng-leave {
+		@include animation(fly-out-from-left 0.5s both ease);
+	}
+	@include keyframes(fly-in-from-left) {
+		from    {
+			@include transform(translateY(15rem) rotate(15deg));
+			opacity:0;
+		}
+	}
+	@include keyframes(fly-out-from-left) {
+		to    {
+			@include transform(translateY(15rem) rotate(15deg));
+			opacity:0;
+		}
+	}
+
+// Dev
+// =====================
+	pre.dev {
+		@include box-shadow(0 1px 2px #aaa);
+		@include animation(fly-in-from-left .5s 1s ease both);
+		// @include transform-origin(top left);
+		@include translate(-50%, 0);
+		position: fixed;
+		left: 50%;
+		bottom: 10px;
+		padding: 1.5rem;
+		margin-top: 50px;
+		color: white;
+		background: color("gray", "base");
+		border-radius: 3px;
+	}
+
+	// @include keyframes(fly-in-from-left) {
+	// 	from {
+	// 		@include transform(translateY(15rem) rotate(15deg));
+	// 		opacity:0;
+	// 	}
+	// }

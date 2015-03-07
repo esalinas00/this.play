@@ -1,0 +1,10 @@
+.content-wrapper {
+	@include transition(all 0.3s);
+	width: 95%;
+	margin: 0 auto;
+	padding: 0;
+
+	@media (min-width: $screen-lg) { // 1024px
+		width: px2rem(960px);
+	}
+}

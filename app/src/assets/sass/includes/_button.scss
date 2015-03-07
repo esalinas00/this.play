@@ -1,0 +1,120 @@
+//
+// Buttons
+// --------------------------------------------------
+
+// Button sizes
+	@mixin button-size($padding-vertical, $padding-horizontal, $font-size: $font-size, $line-height: 1, $border-radius: 4px) {
+		padding: $padding-vertical $padding-horizontal;
+		font-size: $font-size;
+		line-height: $line-height;
+		border-radius: $border-radius;
+	}
+	@mixin button-variant($background: color("gray","darkest"), $color: color("white","base"), $border: $background) {
+		color: $color;
+		background-color: $background;
+		border-color: $border;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color;
+			background-color: darken($background, 10%);
+			border-color: darken($border, 12%);
+		}
+	}
+
+// Base styles
+// --------------------------------------------------
+	[class^="btn-"], [class*=" btn-"] {
+		@include transition("all 0.2s");
+		@include button-size($padding-base-vertical, $padding-base-horizontal);
+		@include user-select(none);
+		display: inline-block;
+		margin-bottom: 0; // For input.btn
+		font-weight: $font-weight;
+		text-align: center;
+		text-decoration: none;
+		vertical-align: middle;
+		cursor: pointer;
+		background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+		border: 1px solid transparent;
+		white-space: nowrap;
+		outline: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+
+		&:active,
+		&.active {
+			outline: 0;
+			background-image: none;
+		}
+
+		&.disabled,
+		&[disabled],
+		fieldset[disabled] & {
+			@include box-shadow(none);
+			opacity: .65;
+			cursor: not-allowed;
+			pointer-events: none; // Future-proof disabling of clicks
+		}
+
+		&.bd {
+			border: 1px solid rgba(0,0,0,0.2)
+		}
+	}
+
+// Alternate buttons
+// --------------------------------------------------
+	.btn-default {
+		@include button-variant(color("blue","lighten-1"), color("white","base"));
+	}
+	.btn-black {
+		@include button-variant(color("gray","darkest"));
+	}
+	.btn-link {
+		@include button-variant(transparent,$link-color);
+		&:hover { text-decoration: underline; }
+	}
+	// Willmer has added a different btn type
+	.btn-primary {
+		color: white;
+		@include v-gradient(#545454,#303030);
+		@include transition(all 0.3s ease-in-out);
+
+		&:active, &:hover {color: white;background: #545454;}
+	}
+	.btn-orange {
+		color: white;
+		background: color('orange','base');
+		@include transition(all 0.3s ease-in-out);
+
+		&:active, &:hover {color: white;background: color('orange','darker');}
+	}
+	.btn-submit {
+		color: white;
+		border: none;
+		@include v-gradient(color('brown','light'),#b79c7a);
+		@include transition(all 0.3s ease-in-out);
+
+		&:active, &:hover {color: white;background: #b79c7a;}
+	}
+
+// Sizes
+// --------------------------------------------------
+	.btn-lg {
+		@include button-size($padding-large-vertical, $padding-large-horizontal);
+	}
+	.btn-sm {
+		@include button-size($padding-small-vertical, $padding-small-horizontal);
+	}
+	.btn-xs {
+		@include button-size($padding-xs-vertical, $padding-xs-horizontal);
+	}
+	.btn-block {
+		display: block;
+		width: 100%;
+		& + .btn-block { margin-top: px2rem(2px) }
+	}

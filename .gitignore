@@ -26,3 +26,14 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+# OS related
+.sass-cache
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
